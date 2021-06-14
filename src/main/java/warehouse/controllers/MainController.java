@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -15,6 +16,11 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
 
+    public Button customersButton;
+    public Button suppliersButton;
+    public Button productsButton;
+    public Button ordersButton;
+    public AnchorPane navigation;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,19 +39,21 @@ public class MainController implements Initializable {
 
     @FXML
     public void switchProductPanel(ActionEvent event) throws Exception {
-        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/customer/product_list.fxml"))));
+        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/product/product_list.fxml"))));
         content.setLeft(pane);
     }
     @FXML
     public void switchSupplierPanel(ActionEvent event) throws Exception {
-        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/customer/supplier_list.fxml"))));
+        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/supplier/supplier_list.fxml"))));
         content.setLeft(pane);
     }
 
     @FXML
     public void switchOrderPanel(ActionEvent event) throws Exception {
-        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/customer/order_list.fxml"))));
+        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/order/order_list.fxml"))));
         content.setLeft(pane);
     }
+
+
 
 }

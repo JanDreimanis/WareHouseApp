@@ -16,8 +16,8 @@
         </center>
 
         <left>
-            <AnchorPane fx:id="navigation" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                <Button fx:id="ordersButton" layoutX="11.0" layoutY="50.0" onAction="#switchOrderPanel" prefHeight="30.0" prefWidth="180.0" text="All Orders" />
+            <AnchorPane fx:id="navigation" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER" >
+                <Button fx:id="ordersButton" layoutX="11.0" layoutY="50.0" onAction="#switchOrderPanel" prefHeight="30.0" prefWidth="180.0" text="All Orders"  />
                 <Button fx:id="productsButton" layoutX="11.0" layoutY="139.0" onAction="#switchProductPanel" prefHeight="30.0" prefWidth="180.0" text="Products" />
                 <Button fx:id="suppliersButton" layoutX="11.0" layoutY="317.0" onAction="#switchSupplierPanel" prefHeight="30.0" prefWidth="180.0" text="Suppliers" />
                 <Button fx:id="customersButton" layoutX="11.0" layoutY="231.0" onAction="#switchCustomerPanel" prefHeight="30.0" prefWidth="180.0" text="Customers" />

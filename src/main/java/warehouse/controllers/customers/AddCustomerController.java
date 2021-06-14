@@ -24,8 +24,8 @@ public class AddCustomerController implements Initializable {
     @FXML
     private TextField phone;
 
-    @FXML
-    private StackPane rootPane;
+//    @FXML
+//    private StackPane rootPane;
 
     private Customer editable;
 

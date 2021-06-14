@@ -4,21 +4,36 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import warehouse.WarehouseApplication;
 import warehouse.controllers.view.ViewLoader;
 import warehouse.entities.Customer;
 import warehouse.repository.CustomerRepository;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class CustomerController implements Initializable {
 
-    private final CustomerRepository customerRepository = new CustomerRepository();
 
+    private final CustomerRepository customerRepository = new CustomerRepository();
+    public Button addButton;
+    public Button deleteButton;
+    public Button editButton;
+    public Button backButton;
     @FXML
     private TableView<Customer> customerTableView;
 
@@ -83,5 +98,22 @@ public class CustomerController implements Initializable {
         list.addAll(customerRepository.findAll());
         customerTableView.setItems(list);
     }
+
+//    @FXML
+//    public void switchCustomerPanel(ActionEvent event) throws Exception {
+//        Pane pane = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/userInterface/customer/customer_list.fxml"))));
+//    }
+
+    public void backToPreviousScene(ActionEvent event) throws Exception {
+
+        Parent rootScene = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/userInterface/main.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(rootScene);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
 
 }
