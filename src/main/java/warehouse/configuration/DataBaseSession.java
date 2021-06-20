@@ -9,17 +9,16 @@ import warehouse.entities.Customer;
 import warehouse.entities.Order;
 import warehouse.entities.Product;
 import warehouse.entities.Supplier;
-
 import java.util.List;
 import java.util.Properties;
 
 import static java.util.Arrays.asList;
 
 public class DataBaseSession {
-    private static final List<Class> ENTITIES = asList(Customer.class, Order.class, Product.class, Supplier.class);
+    private static final List<Class> ENTITIES = asList(Customer.class, Product.class, Supplier.class, Order.class);
 
     private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "root";
+    private static final String DB_PASSWORD = "L13nux123";
 
     private static final String DB_NAME = "warehouse";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME + "?useSSL=false&serverTimezone=UTC";

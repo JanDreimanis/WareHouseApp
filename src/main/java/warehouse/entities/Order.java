@@ -9,10 +9,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Long customer_id;
-    @Column
-    private Long product_id;
+    @Column(name = "customer_id")
+    private Long customerId;
+    @Column(name = "product_id")
+    private Long productId;
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
@@ -28,6 +28,11 @@ public class Order {
     public Order(Product product, Customer customer) {
         this.product = product;
         this.customers = customer;
+    }
+
+    public Order(Long customerId, Long productId) {
+        this.customerId = customerId;
+        this.productId = productId;
     }
 
     public Product getProduct() {
@@ -50,8 +55,8 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", customer_id=" + customer_id +
-                ", product_id=" + product_id +
+                ", customer_id=" + customerId +
+                ", product_id=" + productId +
                 ", product=" + product +
                 ", customers=" + customers +
                 '}';

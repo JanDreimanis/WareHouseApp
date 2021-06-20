@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="395.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.controllers.products.ProductController">
+    <TableView fx:id="productTableView" layoutX="-1.0" prefHeight="308.0" prefWidth="620.0">
+        <columns>
+        </columns>
+    </TableView>
+    <Button fx:id="addButton" defaultButton="true" layoutX="46.0" layoutY="339.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="25.0" prefWidth="73.0" text="Add" textFill="RED" />
+    <Button fx:id="deleteButton" layoutX="173.0" layoutY="339.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="25.0" prefWidth="73.0" text="Delete" textFill="RED" />
+    <Button fx:id="editButton" layoutX="310.0" layoutY="339.0" mnemonicParsing="false" onAction="#editProduct" prefHeight="25.0" prefWidth="73.0" text="Edit" textFill="#fc0000" />
+    <Button fx:id="backButton" layoutX="445.0" layoutY="339.0" mnemonicParsing="false" onAction="#backToPreviousScene" prefHeight="25.0" prefWidth="73.0" text="Back" textAlignment="CENTER" textFill="RED" />
+</AnchorPane>

@@ -1,5 +1,7 @@
 package warehouse.entities;
 
+import javafx.scene.control.TextField;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,6 +21,8 @@ public class Product {
     private String unit;
     @Column
     private Double price;
+    @Column(name = "suppliers_id")
+    private Long supplierId;
 
     @ManyToOne
     @JoinColumn(name = "suppliers_id", insertable = false, updatable = false)
@@ -30,11 +34,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, Integer quantity, String unit, Double price) {
+    public Product(String name, Integer quantity, String unit, Double price,Long supplierId) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
         this.price = price;
+        this.supplierId = supplierId;
     }
 
     public long getId() {
@@ -77,6 +82,26 @@ public class Product {
         this.price = price;
     }
 
+    public Long getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public Supplier getSuppliers() {
+        return suppliers;
+    }
+
+    public void setSuppliers(Supplier suppliers) {
+        this.suppliers = suppliers;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -85,7 +110,9 @@ public class Product {
                 ", quantity=" + quantity +
                 ", unit='" + unit + '\'' +
                 ", price=" + price +
+                ", supplierId=" + supplierId +
+                ", suppliers=" + suppliers +
+                ", orders=" + orders +
                 '}';
     }
-
 }
