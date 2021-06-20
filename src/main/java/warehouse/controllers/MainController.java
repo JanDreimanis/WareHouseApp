@@ -1,13 +1,16 @@
 package warehouse.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import warehouse.configuration.HibernateUtils;
 
 import java.net.URL;
 import java.util.Objects;
@@ -21,6 +24,7 @@ public class MainController implements Initializable {
     public Button productsButton;
     public Button ordersButton;
     public AnchorPane navigation;
+    public Button closeSession;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,6 +58,10 @@ public class MainController implements Initializable {
         content.setLeft(pane);
     }
 
+    @FXML
+    public void closeSession(ActionEvent event) throws Exception {
+        Platform.exit();
+    }
 
 
 }

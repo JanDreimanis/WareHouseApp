@@ -3,6 +3,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.controllers.MainController">
     <BorderPane fx:id="content" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -10,14 +11,21 @@
         <center>
             <Pane prefHeight="394.0" prefWidth="1123.0" BorderPane.alignment="CENTER">
                 <BorderPane.margin>
-                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
                 </BorderPane.margin>
+                <Button fx:id="closeSession" defaultButton="true" layoutX="115.0" layoutY="135.0"
+                        mnemonicParsing="false" onAction="#closeSession" prefHeight="150.0" prefWidth="150.0"
+                        text="CLOSE" textAlignment="CENTER">
+                    <font>
+                        <Font size="32.0"/>
+                    </font>
+                </Button>
             </Pane>
         </center>
 
         <left>
-            <AnchorPane fx:id="navigation" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER" >
-                <Button fx:id="ordersButton" layoutX="11.0" layoutY="50.0" onAction="#switchOrderPanel" prefHeight="30.0" prefWidth="180.0" text="All Orders"  />
+            <AnchorPane fx:id="navigation" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <Button fx:id="ordersButton" layoutX="11.0" layoutY="50.0" onAction="#switchOrderPanel" prefHeight="30.0" prefWidth="180.0" text="All Orders" />
                 <Button fx:id="productsButton" layoutX="11.0" layoutY="139.0" onAction="#switchProductPanel" prefHeight="30.0" prefWidth="180.0" text="Products" />
                 <Button fx:id="suppliersButton" layoutX="11.0" layoutY="317.0" onAction="#switchSupplierPanel" prefHeight="30.0" prefWidth="180.0" text="Suppliers" />
                 <Button fx:id="customersButton" layoutX="11.0" layoutY="231.0" onAction="#switchCustomerPanel" prefHeight="30.0" prefWidth="180.0" text="Customers" />
