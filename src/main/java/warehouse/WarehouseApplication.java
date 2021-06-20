@@ -8,6 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import warehouse.configuration.DataBaseSession;
+import warehouse.configuration.HibernateUtils;
+import warehouse.entities.Customer;
+import warehouse.repository.CustomerRepository;
+import warehouse.repository.OrderRepository;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -32,11 +36,12 @@ public class WarehouseApplication extends Application {
 
 
     public static void main(String[] args) {
-        DataBaseSession.getInstance();
+//        DataBaseSession.getInstance();
         launch(args);
-        DataBaseSession.shutdown();
-
+//        DataBaseSession.shutdown();
+        HibernateUtils.close();
     }
+
 
 
 }
