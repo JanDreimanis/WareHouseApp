@@ -52,6 +52,7 @@ public class DataBaseSession {
             sessionFactory = configuration.buildSessionFactory(serviceRegistry(configuration));
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("Tev ir līkas rokas!!!");
         }
         return sessionFactory;
     }
