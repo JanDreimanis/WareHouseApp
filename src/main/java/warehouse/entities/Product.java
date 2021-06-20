@@ -12,7 +12,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column
     private String name;
     @Column
@@ -24,7 +24,7 @@ public class Product {
     @Column(name = "suppliers_id")
     private Long supplierId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "suppliers_id", insertable = false, updatable = false)
     private Supplier suppliers;
 
@@ -42,11 +42,11 @@ public class Product {
         this.supplierId = supplierId;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -102,17 +102,17 @@ public class Product {
         return orders;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", quantity=" + quantity +
-                ", unit='" + unit + '\'' +
-                ", price=" + price +
-                ", supplierId=" + supplierId +
-                ", suppliers=" + suppliers +
-                ", orders=" + orders +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Product{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", quantity=" + quantity +
+//                ", unit='" + unit + '\'' +
+//                ", price=" + price +
+//                ", supplierId=" + supplierId +
+//                ", suppliers=" + suppliers +
+//                ", orders=" + orders +
+//                '}';
+//    }
 }

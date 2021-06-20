@@ -59,14 +59,14 @@ public class Supplier {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Supplier{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
-
+//    @Override
+//    public String toString() {
+//        return "Supplier{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", address='" + address + '\'' +
+//                ", phone='" + phone + '\'' +
+//                ", product=" + product +
+//                '}';
+//    }
 }

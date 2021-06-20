@@ -25,10 +25,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Product product, Customer customer) {
-        this.product = product;
-        this.customers = customer;
-    }
+
 
     public Order(Long customerId, Long productId) {
         this.customerId = customerId;
@@ -51,14 +48,14 @@ public class Order {
         this.customers = customer;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", customer_id=" + customerId +
-                ", product_id=" + productId +
-                ", product=" + product +
-                ", customers=" + customers +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Order{" +
+//                "id=" + id +
+//                ", customerId=" + customerId +
+//                ", productId=" + productId +
+//                ", product=" + product +
+//                ", customers=" + customers +
+//                '}';
+//    }
 }
