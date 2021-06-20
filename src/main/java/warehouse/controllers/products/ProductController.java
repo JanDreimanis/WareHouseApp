@@ -85,15 +85,15 @@ public class ProductController implements Initializable {
         TableColumn<Product, Double> column5 = new TableColumn<>("Price");
         column5.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-//        TableColumn<Product, Long> column6 = new TableColumn<>("Suppliers ID");
-//        column6.setCellValueFactory(new PropertyValueFactory<>("suppliers_id"));
+        TableColumn<Product, Long> column6 = new TableColumn<>("Suppliers ID");
+        column6.setCellValueFactory(new PropertyValueFactory<>("suppliers_id"));
 
         productTableView.getColumns().add(column1);
         productTableView.getColumns().add(column2);
         productTableView.getColumns().add(column3);
         productTableView.getColumns().add(column4);
         productTableView.getColumns().add(column5);
-//        productTableView.getColumns().add(column6);
+        productTableView.getColumns().add(column6);
     }
 
 
