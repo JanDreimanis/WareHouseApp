@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import warehouse.entities.Product;
+import warehouse.entities.Supplier;
 import warehouse.repository.ProductRepository;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,17 +25,13 @@ public class AddProductController implements Initializable {
     @FXML
     private TextField price;
     @FXML
-    private final TextField suppliersId;
-//    @FXML
-//    private StackPane rootPane;
+    private TextField suppliersId;
+
 
     private Product editable;
 
     private Runnable closeDialogCallback;
 
-    public AddProductController(TextField suppliersId) {
-        this.suppliersId = suppliersId;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,7 +48,7 @@ public class AddProductController implements Initializable {
         this.quantity.setText(product.getQuantity().toString());
         this.unit.setText(product.getUnit());
         this.price.setText(product.getPrice().toString());
-        this.suppliersId.setText(product.getSuppliers().getId().toString());
+        this.suppliersId.setText(product.getSupplierId().toString());
     }
 
     @FXML
